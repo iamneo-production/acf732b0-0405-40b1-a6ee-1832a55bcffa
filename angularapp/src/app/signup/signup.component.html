@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<div class="container">
+    <div class="row">
+    <div class="col-md-6 mx-auto">
+    <h2 class="text-center mb-4">Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+    <!--<label for="user/admin">User/Admin</label>
+    <input  type="text" class="form-control" formControlName="userrole" ngClass="{'is-invalid':submitted&&registerForm.controls.userrole.errors}" id="admin/username" placeholder="Enter admin/user">-->
+    <label for="useradmin">Enter User/Admin:</label>
+  <select class="form-control" formControlName="UserRole" ngClass="{'is-invalid':submitted&&registerForm.controls.userrole.errors}" id="user" name="user" required>
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+    <option value="jobseeker">JobSeeker</option>
+  </select>
+    </div>
+    <div class="form-group">
+    <label for="email">Email address</label>
+    <input  type="email" class="form-control" formControlName="Email" id="email" placeholder="Enter email" required>
+    </div>
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" formControlName="UserName" id="username" placeholder="Enter Username" required>  
+    </div>
+    <div class="form-group">
+        <label for="mobilenumber">MobileNumber</label>
+        <input type="tel" class="form-control" formControlName="MobileNumber" id="mobileNumber" placeholder="Enter Mobilenumber" required>
+        </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="Password" id="password" placeholder="Password" required>
+        </div>
+        <!--<div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="password" id="ConfirmPassword" placeholder="Confirm Password" required>
+        </div>-->
+    <button id="submitButton" type="submit" class="btn btn-primary" >Register </button>
+    <p>Already User? <a id="siginLink" routerLink="/user/login">Login</a></p>
+    </form>
+    </div>
+    </div>
+    </div>
